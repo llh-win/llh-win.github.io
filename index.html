@@ -3,9 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <title>刘先生的个人网站</title>
+  <script>
+window.onload=function(){
+//定时器每秒调用一次fnDate()
+setInterval(function(){
+fnDate();
+},1);
+}
+//js 获取当前时间
+function fnDate(){
+var oDiv=document.getElementById("div1");
+var date=new Date();
+var year=date.getFullYear();//当前年份
+var month=date.getMonth();//当前月份
+var data=date.getDate();//天
+var hours=date.getHours();//小时
+var minute=date.getMinutes();//分
+var second=date.getSeconds();//秒
+var time=year+"-"+fnW((month+1))+"-"+fnW(data)+" "+fnW(hours)+":"+fnW(minute)+":"+fnW(second);
+oDiv.innerHTML=time;
+}
+//补位 当某个字段不是两位数时补0
+function fnW(str){
+var num;
+str>10?num=str:num=""+str;
+return num;
+}
+</script>
 </head>
 <body>
-  <img src="/llh.jpg" />
+  <img src="/llh.jpg" style="width:100px;height:100px;border-radius:50%;/><h1>刘先生</h1><div id="div1"></div><br>
   <h1>欢迎光临小刘的个人网站！</h1>
 </body>
 </html>
