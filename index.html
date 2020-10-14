@@ -4,37 +4,32 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript">
+<script>
 window.onload=function(){
-	//定时器每秒调用一次fnDate()
-	setInterval(function(){
-	fnDate();
-	},1);
-	}
-	//js 获取当前时间
-	function fnDate(){
-	var oDiv=document.getElementById("div1");
-	var date=new Date();
-	var year = date.getFullYear();    
-	var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;    
-	var data = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-	var week = "星期" + "日一二三四五六".split(/(?!\b)/)[date.getDay()];
-	$(".yearMon").text(year+"年"+month+"月");
-	$(".date").text(data);
-	$(".week").text(week);
-	var hours=date.getHours();//小时
-	var minute=date.getMinutes();//分
-	var second=date.getSeconds();//秒
-	var time=fnW(hours)+":"+fnW(minute)+":"+fnW(second);
-	oDiv.innerHTML=time;
-	}
-	//补位 当某个字段不是两位数时补0
-	function fnW(str){
-	var num;
-	str>10?num=str:num=""+str;
-	return num;
-	}
-</script>
+//定时器每秒调用一次fnDate()
+setInterval(function(){
+fnDate();
+},1);
+}
+//js 获取当前时间
+function fnDate(){
+var oDiv=document.getElementById("div1");
+var date=new Date();
+var year=date.getFullYear();//当前年份
+var month=date.getMonth();//当前月份
+var data=date.getDate();//天
+var hours=date.getHours();//小时
+var minute=date.getMinutes();//分
+var second=date.getSeconds();//秒
+var time=year+"-"+fnW((month+1))+"-"+fnW(data)+" "+fnW(hours)+":"+fnW(minute)+":"+fnW(second);
+oDiv.innerHTML=time;
+}
+//补位 当某个字段不是两位数时补0
+function fnW(str){
+var num;
+str>10?num=str:num=""+str;
+return num;
+}
 <style type="text/css">
 body {
 	background:
@@ -64,11 +59,6 @@ body {
 </head>
 <body>
 <img src="llh.jpg" style="width:80px;height:80px;border-radius:50%;margin-left:10px;"/><h1 style="font-size:15px;margin-left:22px;">刘先生</h1><br>
-<div id="calendar">
-      <div class="yearMon"></div>
-      <div class="date"></div>
-      <div class="week"></div>
-      <div id="div1"></div>
-</div>
+<div id="div1" style="margin-right:300px;"></div>
 </body>
 </html>
