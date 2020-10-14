@@ -5,18 +5,6 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript">
-$(function(){
-	// 获取时间
-	var nowDate = new Date();     
-	var year = nowDate.getFullYear();    
-	var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;    
-	var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
-	var week = "星期" + "日一二三四五六".split(/(?!\b)/)[nowDate.getDay()];
-	// 添加文本内容到相应的div
-	$(".yearMon").text(year+"年"+month+"月");
-	$(".date").text(date);
-	$(".week").text(week);
-});
 window.onload=function(){
 	//定时器每秒调用一次fnDate()
 	setInterval(function(){
@@ -27,6 +15,13 @@ window.onload=function(){
 	function fnDate(){
 	var oDiv=document.getElementById("div1");
 	var date=new Date();
+	var year = date.getFullYear();    
+	var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;    
+	var data = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+	var week = "星期" + "日一二三四五六".split(/(?!\b)/)[date.getDay()];
+	$(".yearMon").text(year+"年"+month+"月");
+	$(".date").text(data);
+	$(".week").text(week);
 	var hours=date.getHours();//小时
 	var minute=date.getMinutes();//分
 	var second=date.getSeconds();//秒
