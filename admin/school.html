@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学校美景</title>
+    <style type="text/css">
+        body{
+            background-size: cover;
+        }
+        img{
+            width: 850px;
+            height: 500px;
+        }
+        .photo{
+            width: 900px;
+            height: 550px;
+            border: 1px solid #555555;
+            margin: auto auto;
+            position: relative;
+            background: #ffffff;
+            box-shadow: 0 10px 80px rgba(0,0,0,.6)
+        }
+        .photo input{
+            display: none;
+        }
+        .image{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 800px;
+            height: 450px;
+            margin: 25px 25px;
+            transform: scale(0);
+            opacity: 0;
+            transition: all 0.7s;
+        }
+        .image img{
+
+        }
+        .nav label{
+            width: 150px;
+            height: 500px;
+            margin: 25px 25px;
+            position: absolute;
+            z-index: 10;
+            opacity: 0;
+            display: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            color: #ffffff;
+            font-size: 50px;
+            line-height: 450px;
+            text-align: center;
+            text-shadow: 0 0 15px #555555);
+        }
+        .leftjianbian{
+            background: linear-gradient(right , rgba(250, 242, 239,0) 1% , rgba(158, 148, 166,0.5) 100%);
+            background: -o-linear-gradient(right , rgba(250, 242, 239,0) 1% , rgba(158, 148, 166,0.5) 100%);
+            background: -ms-linear-gradient(right , rgba(250, 242, 239,0) 1% , rgba(158, 148, 166,0.5) 100%);
+            background: -moz-linear-gradient(right , rgba(250, 242, 239,0) 1% , rgba(158, 148, 166,0.5) 100%);
+            background: -webkit-linear-gradient(right , rgba(250, 242, 239,0) 1% , rgba(158, 148, 166,0.5) 100%);
+        }
+        .rightjianbian{
+            background: linear-gradient(left , rgba(250, 242, 239,0) 1% , rgba(158, 148, 166,0.5) 100%);
+            background: -o-linear-gradient(left , rgba(250, 242, 239,0) 1% , rgba(158, 148, 166,0.5) 100%);
+            background: -ms-linear-gradient(left , rgba(250, 242, 239,0) 1% , rgba(158, 148, 166,0.5) 100%);
+            background: -moz-linear-gradient(left , rgba(250, 242, 239,0) 1% , rgba(158, 148, 166,0.5) 100%);
+            background: -webkit-linear-gradient(left , rgba(250, 242, 239,0) 10% , rgba(158, 148, 166,0.5) 100%);
+        }
+        .image:hover + .nav label{
+            opacity: 0.5;
+        }
+        .nav label:hover{
+            opacity: 1;
+        }
+        .nav .down{
+            right: 0;
+        }
+        input:checked + .control .image{
+            opacity: 1;
+            transform: scale(1);
+            transition: all 1s;
+        }
+        input:checked + .control .nav label{
+            display: block;
+        }
+        .dots{
+            width:100%;
+            height: 20px;
+            position: absolute;
+            bottom: 30px;
+            text-align: center;
+        }
+        .dot{
+            width: 10px;
+            height: 10px;
+            margin: 0px 5px;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+        }
+        input#img1:checked ~ .dots label#dot1,
+        input#img2:checked ~ .dots label#dot2,
+        input#img3:checked ~ .dots label#dot3,
+        input#img4:checked ~ .dots label#dot4,
+        input#img5:checked ~ .dots label#dot5,
+        input#img6:checked ~ .dots label#dot6{
+            background: rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+<div class="photo" id="photo">
+    <!--//1-->
+    <input type="radio" name="btn" id="img1" checked/>
+    <div class="control">
+        <div class="image"><img src="img/1.jpg"/></div>
+        <div class="nav">
+            <label for="img6" class="up leftjianbian"><</label>
+            <label for="img2" class="down rightjianbian">></label>
+        </div>
+    </div>
+    <!--//2-->
+    <input type="radio" name="btn" id="img2"/>
+    <div class="control">
+        <div class="image"><img src="img/2.jpg"/></div>
+        <div class="nav">
+            <label for="img1" class="up leftjianbian"><</label>
+            <label for="img3" class="down rightjianbian">></label>
+        </div>
+    </div>
+    <!--//3-->
+    <input type="radio" name="btn" id="img3"/>
+    <div class="control">
+        <div class="image"><img src="img/3.jpg"/></div>
+        <div class="nav">
+            <label for="img2" class="up leftjianbian"><</label>
+            <label for="img4" class="down rightjianbian">></label>
+        </div>
+    </div>
+    <!--//4-->
+    <input type="radio" name="btn" id="img4"/>
+    <div class="control">
+        <div class="image"><img src="img/4.jpg"/></div>
+        <div class="nav">
+            <label for="img3" class="up leftjianbian"><</label>
+            <label for="img5" class="down rightjianbian">></label>
+        </div>
+    </div>
+    <!--//5-->
+    <input type="radio" name="btn" id="img5"/>
+    <div class="control">
+        <div class="image"><img src="img/5.jpg"/></div>
+        <div class="nav">
+            <label for="img4" class="up leftjianbian"><</label>
+            <label for="img6" class="down rightjianbian">></label>
+        </div>
+    </div>
+    <!--//6-->
+    <input type="radio" name="btn" id="img6"/>
+    <div class="control">
+        <div class="image"><img src="img/6.jpg"/></div>
+        <div class="nav">
+            <label for="img5" class="up leftjianbian"><</label>
+            <label for="img1" class="down rightjianbian">></label>
+        </div>
+    </div>
+    <div class="dots">
+        <label for="img1" class="dot" id="dot1"></label>
+        <label for="img2" class="dot" id="dot2"></label>
+        <label for="img3" class="dot" id="dot3"></label>
+        <label for="img4" class="dot" id="dot4"></label>
+        <label for="img5" class="dot" id="dot5"></label>
+        <label for="img6" class="dot" id="dot6"></label>
+    </div>
+</div>
+</body>
+</html>
