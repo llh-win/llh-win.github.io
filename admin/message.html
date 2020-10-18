@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style>
         .smart-green {
             margin-left: auto;
@@ -94,11 +101,9 @@
             margin-bottom: 10px;
         }
     </style>
-
 </head>
 <body>
-
-<form action="showMessage.html" method="post" class="smart-green">
+<form action="#" method="post" class="smart-green">
     <h1>留言信息
         <span>请留下你的信息.</span>
     </h1>
@@ -122,13 +127,13 @@
 
     <label>
         <span>留言 :</span>
-        <textarea id="message" name="message"  placeholder="请输入您的留言（字数100字以内）"></textarea>
+        <textarea id="message" name="message"  placeholder="请输入你的建议"></textarea>
         <div class="error-msg"></div>
     </label>
     <div class="success-msg"></div>
     <label>
         <span>&nbsp;</span>
-        <input type="submit" class="button" value="提交"/>
+        <a href="../admin/showMessage.html" class="btn btn-warning" style="width:100px;">提交</a>
     </label>
     <input type='hidden' name='csrfmiddlewaretoken' value='SfHkbL4feo1G00sJQtbO7TtLN4c2BUwa' />
 </form>
